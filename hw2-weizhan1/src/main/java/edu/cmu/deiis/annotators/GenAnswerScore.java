@@ -566,7 +566,7 @@ public class GenAnswerScore extends CasAnnotator_ImplBase implements TypeNameMap
 
     // load the wordnet tools
     try {
-      JWNL.initialize(new FileInputStream("src/main/resources/dict/file_properties.xml"));
+      JWNL.initialize(new FileInputStream("src/main/resources/WordNetDict/file_properties.xml"));
     } catch (FileNotFoundException e1) {
       // TODO Auto-generated catch block
       e1.printStackTrace();
