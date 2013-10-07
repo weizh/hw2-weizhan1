@@ -11,8 +11,8 @@ import org.apache.uima.jcas.cas.FSArray;
 
 
 /** 
- * Updated by JCasGen Mon Sep 23 10:08:35 EDT 2013
- * XML source: /Users/indri/Eclipse_workspace/hw2-weizhan1/src/main/resources/hw2-weizhan1-aae.xml
+ * Updated by JCasGen Sun Oct 06 20:57:29 EDT 2013
+ * XML source: /Users/indri/git/hw2/hw2-weizhan1/src/main/resources/descriptors/WordFeatureAnnotator.xml
  * @generated */
 public class NGram extends Annotation {
   /** @generated

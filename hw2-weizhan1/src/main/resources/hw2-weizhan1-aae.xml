@@ -7,19 +7,19 @@
     <delegateAnalysisEngine key="FileInputAnnotator">
       <import name="descriptors.FileInputAnnotator"/>
     </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NGramAnnotator">
+      <import name="descriptors.NGramAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NGramAnnotator2">
+      <import name="descriptors.NGramAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NGramAnnotator3">
+      <import name="descriptors.NGramAnnotator"/>
+    </delegateAnalysisEngine>
     <delegateAnalysisEngine key="WordFeatureAnnotator">
       <import name="descriptors.WordFeatureAnnotator"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="NGramAnnotator">
-      <import name="descriptors.NGramAnnotator"/>
-    </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="NGramAnnotator2">
-      <import name="descriptors.NGramAnnotator"/>
-    </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="NGramAnnotator3">
-      <import name="descriptors.NGramAnnotator"/>
-    </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="GenAnswerScoreAnnotator">
+    <delegateAnalysisEngine key="GenAnswerScoreAnnotator">
       <import name="descriptors.GenAnswerScoreAnnotator"/>
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
@@ -83,11 +83,11 @@
     <flowConstraints>
       <fixedFlow>
         <node>FileInputAnnotator</node>
+        <node>NGramAnnotator</node>
+        <node>NGramAnnotator2</node>
+        <node>NGramAnnotator3</node>
         <node>WordFeatureAnnotator</node>
-      <node>NGramAnnotator</node>
-      <node>NGramAnnotator2</node>
-      <node>NGramAnnotator3</node>
-      <node>GenAnswerScoreAnnotator</node>
+        <node>GenAnswerScoreAnnotator</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>
