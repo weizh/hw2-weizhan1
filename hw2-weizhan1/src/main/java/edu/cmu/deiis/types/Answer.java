@@ -11,8 +11,8 @@ import org.apache.uima.jcas.cas.StringArray;
 
 
 /** 
- * Updated by JCasGen Sun Oct 06 20:57:29 EDT 2013
- * XML source: /Users/indri/git/hw2/hw2-weizhan1/src/main/resources/descriptors/WordFeatureAnnotator.xml
+ * Updated by JCasGen Sun Oct 06 21:09:52 EDT 2013
+ * XML source: /Users/indri/git/hw2/hw2-weizhan1/src/main/resources/hw2-weizhan1-aae.xml
  * @generated */
 public class Answer extends Annotation {
   /** @generated

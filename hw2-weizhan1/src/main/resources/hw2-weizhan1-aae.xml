@@ -7,20 +7,88 @@
     <delegateAnalysisEngine key="FileInputAnnotator">
       <import name="descriptors.FileInputAnnotator"/>
     </delegateAnalysisEngine>
-    </delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="WordFeatureAnnotator">
+      <import name="descriptors.WordFeatureAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NGramAnnotator">
+      <import name="descriptors.NGramAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NGramAnnotator2">
+      <import name="descriptors.NGramAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NGramAnnotator3">
+      <import name="descriptors.NGramAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="GenAnswerScoreAnnotator">
+      <import name="descriptors.GenAnswerScoreAnnotator"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>hw2-weizhan1-aae</name>
     <description/>
     <version>1.0</version>
     <vendor/>
     <configurationParameters searchStrategy="language_fallback">
-      </configurationParameters>
+      <configurationParameter>
+        <name>n</name>
+        <description>Specify the n for the n-gram annotations.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+        <overrides>
+          <parameter>NGramAnnotator/n</parameter>
+        </overrides>
+      </configurationParameter>
+      <configurationParameter>
+        <name>n1</name>
+        <description>Specify the n for the n-gram annotations.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+        <overrides>
+          <parameter>NGramAnnotator2/n</parameter>
+        </overrides>
+      </configurationParameter>
+      <configurationParameter>
+        <name>n2</name>
+        <description>Specify the n for the n-gram annotations.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+        <overrides>
+          <parameter>NGramAnnotator3/n</parameter>
+        </overrides>
+      </configurationParameter>
+    </configurationParameters>
     <configurationParameterSettings>
-      </configurationParameterSettings>
+      <nameValuePair>
+        <name>n</name>
+        <value>
+          <string>1</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>n1</name>
+        <value>
+          <string>2</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>n2</name>
+        <value>
+          <string>3</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
     <flowConstraints>
       <fixedFlow>
         <node>FileInputAnnotator</node>
-        </fixedFlow>
+        <node>WordFeatureAnnotator</node>
+        <node>NGramAnnotator</node>
+        <node>NGramAnnotator2</node>
+        <node>NGramAnnotator3</node>
+        <node>GenAnswerScoreAnnotator</node>
+      </fixedFlow>
     </flowConstraints>
     <typePriorities/>
     <fsIndexCollection/>

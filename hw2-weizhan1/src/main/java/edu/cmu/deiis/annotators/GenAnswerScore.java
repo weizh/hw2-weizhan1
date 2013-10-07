@@ -67,6 +67,7 @@ public class GenAnswerScore extends CasAnnotator_ImplBase implements TypeNameMap
     /**
      * Generate the Question features
      */
+    
     Question question = (Question) aCAS.getAnnotationIndex(Question).iterator().next();
 
     // ngram feature
@@ -118,6 +119,7 @@ public class GenAnswerScore extends CasAnnotator_ImplBase implements TypeNameMap
       ArrayList<String> aDep = new ArrayList<String>();
 
       StringArray aDependencies = answer.getDependencies();
+      System.out.println(aDependencies.size());
       for (int i = 0; i < aDependencies.size(); i++) {
         String dep = aDependencies.get(i);
         // the triple returned is the normalized tuple : agent(killed-3, booth) -> dobj-kill-booth.
@@ -125,7 +127,6 @@ public class GenAnswerScore extends CasAnnotator_ImplBase implements TypeNameMap
         // filtering the relations, select out nsubj, dobj, and neg. nsubj-kill-booth or neg-kill.
         aDep.add(triple);
       }
-
       /**
        * Generate score for this answer based on feature matching scores.
        */
@@ -141,6 +142,7 @@ public class GenAnswerScore extends CasAnnotator_ImplBase implements TypeNameMap
 
       // Generate parsing match scores
       double parseScore = getParseSimilarity(aDep, qDep);
+
       
       // combine those scores to generate the final score. tune the parameters inside this function.
       double score = combineScores(nGramScore, bonScores, parseScore);
@@ -153,8 +155,8 @@ public class GenAnswerScore extends CasAnnotator_ImplBase implements TypeNameMap
       answerScore.setCasProcessorId("edu.cmu.deiis.annotators.GenAnswerScore");
       answerScore.setConfidence(1);
       answerScores.add(answerScore);
-    }
 
+    }
     /**
      *  add answer score to indexes.
      */
@@ -185,6 +187,7 @@ public class GenAnswerScore extends CasAnnotator_ImplBase implements TypeNameMap
       System.out.println("Generated score: "+answerScore.getScore());
       System.out.println("Gold label :" +answerScore.getAnswer().getIsCorrect());
     }
+    
     
   }// end of process
 
